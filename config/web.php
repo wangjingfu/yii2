@@ -56,6 +56,12 @@ $config = [
     'controllerMap' => [
         'country' => 'app\controllers\home\CountryController',
     ],
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+            'defaultRoute' => 'index',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {
