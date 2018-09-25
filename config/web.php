@@ -2,6 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$cookie = require __DIR__ . '/cookie.php';
 
 $config = [
     'id' => 'basic',
@@ -12,10 +13,7 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
-        'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'ljOY7X_TB9CUEkLd2HT1g84tqVLjmbg_',
-        ],
+        'request' => $cookie,
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
