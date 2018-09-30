@@ -3,9 +3,14 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use app\assets\AdminAsset;
+use yii\web\View;
+use app\modules\assets\admin\ConditionAsset;
+use app\modules\assets\admin\AdminAsset;
 
+$this->title = 'AdminLTE';
+ConditionAsset::register($this);
 AdminAsset::register($this);
+$this->registerJs("$.widget.bridge('uibutton', $.ui.button);", View::POS_END);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -17,24 +22,18 @@ AdminAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script type="text/javascript">
+    var _csrf = '<?= Yii::$app->request->csrfToken; ?>';
+    </script>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini">
 <?php $this->beginBody() ?>
 <div class="wrapper">
-<?php if (isset($this->blocks['header'])): ?>
-    <?= $this->blocks['header'] ?>
-<?php else: ?>
-    
+<?php if (isset($this->blocks['admin'])): ?>
+    <?= $this->blocks['admin'] ?>
 <?php endif; ?>
 </div>
 <?php $this->endBody() ?>
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
 </body>
 </html>
 <?php $this->endPage() ?>

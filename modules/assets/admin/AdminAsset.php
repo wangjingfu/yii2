@@ -1,5 +1,5 @@
 <?php
-namespace app\assets;
+namespace app\modules\assets\admin;
 
 use yii\web\AssetBundle;
 
@@ -13,7 +13,7 @@ class AdminAsset extends AssetBundle
         'bower_components/font-awesome/css/font-awesome.min.css',
         'bower_components/Ionicons/css/ionicons.min.css',
         'dist/css/AdminLTE.min.css',
-        'dist/css/skins/skin-blue.min.css',
+        'dist/css/skins/_all-skins.min.css',
 //         'bower_components/morris.js/morris.css',
 //         'bower_components/jvectormap/jquery-jvectormap.css',
 //         'bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
@@ -41,5 +41,6 @@ class AdminAsset extends AssetBundle
          'dist/js/adminlte.min.js',
 //         'dist/js/pages/dashboard.js',
 //        'dist/js/demo.js',
+         'admin.js'
     ];
 }

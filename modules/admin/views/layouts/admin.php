@@ -1,23 +1,12 @@
-<?php $this->beginContent('@adminLayoutsPath/footer.php'); ?>
-
+<?php $this->beginContent('@adminLayoutsPath/base.php'); ?>
 <?php $this->beginBlock('admin'); ?>
-
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      Dashboard
-      <small>Control panel</small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Dashboard</li>
-    </ol>
-  </section>
-<?= $content; ?>
-</div>
-
+<!-- 顶部 -->
+<?= $this->render('header.php') ?>
+<!-- 左侧导航 -->
+<?= $this->render('nav.php') ?>
+<!-- 右侧内容 -->
+<?= $this->render('content.php',['content' => $content]) ?>
+<!-- 底部 -->
+<?= $this->render('footer.php') ?>
 <?php $this->endBlock(); ?>
-
 <?php $this->endContent(); ?>
